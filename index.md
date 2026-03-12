@@ -1,7 +1,7 @@
 ---
 layout: report
 title: 문서 목록
-permalink: /blog/
+permalink: /
 ---
 
 # 📚 4Link Report
