@@ -1,0 +1,28 @@
+theme: jekyll-theme-modernist
+title: 4Link Report
+description: 보고서 및 분석 문서 저장소
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+url: "https://ane1235.github.io"
+baseurl: "/blog"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - vendor
+  - README.md
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: report
+
+plugins:
+  - jekyll-seo-tag

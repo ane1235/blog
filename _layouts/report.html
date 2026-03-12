@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pages-themes/modernist@v0.2.0/assets/css/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            margin: 0;
+            color: #333;
+        }
+        header p {
+            color: #666;
+            margin: 5px 0 0 0;
+        }
+        article {
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid #0969da;
+            margin: 20px 0;
+        }
+        article h1, article h2 {
+            margin-top: 0;
+        }
+        .post-date {
+            color: #999;
+            font-size: 0.9em;
+        }
+        nav {
+            margin: 20px 0;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #0969da;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="{{ site.baseurl }}/" style="text-decoration: none; color: inherit;">{{ site.title }}</a></h1>
+            <p>{{ site.description }}</p>
+        </header>
+
+        <nav>
+            <a href="{{ site.baseurl }}/">📄 목록</a>
+            <a href="https://ane1235.github.io/">🏠 홈</a>
+        </nav>
+
+        <main>
+            {% if page.title and page.path != "index.md" %}
+            <article>
+                <h1>{{ page.title }}</h1>
+                {% if page.date %}
+                <div class="post-date">{{ page.date | date: "%Y년 %m월 %d일" }}</div>
+                {% endif %}
+                <hr>
+                {{ content }}
+            </article>
+            {% else %}
+            {{ content }}
+            {% endif %}
+        </main>
+
+        <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #666; font-size: 0.9em;">
+            <p>&copy; 2026 4Link Report. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
